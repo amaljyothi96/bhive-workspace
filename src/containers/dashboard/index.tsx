@@ -49,11 +49,9 @@ const Dashboard = () => {
             Host your meeting with world-class amenities. Starting at{" "}
             <span className="text-[#FFBB00]">₹199/-!</span>
           </p>
-          <img
-            className="col-span-2 order-1 lg:order-2"
-            src={dashboard2}
-            alt="co working space"
-          />
+          <div className="flex justify-center order-1 lg:order-2 col-span-2">
+            <img src={dashboard2} alt="co working space" />
+          </div>
           <p className="text-primary heading-4 order-2 lg:hidden block text-center mt-4 font-semibold">
             Host your meeting with world-class amenities. Starting at{" "}
             <span className="text-[#FFBB00]">₹199/-!</span>

@@ -6,7 +6,7 @@ import { WorkspaceCardData } from "../../types";
 
 const DetailsCard = ({ data }: { data: WorkspaceCardData }) => {
   return (
-    <div className="p-4 bg-white border-[1px] border-[#EEE7E7CC] rounded-lg shadow-[0px_1px_9px_0px_#0000000F]">
+    <div className="p-4 bg-white border-[1px] border-[#EEE7E7CC] rounded-lg shadow-[0px_1px_9px_0px_#0000000F] max-w-[400px]">
       <div className="grid grid-cols-5 justify-between gap-x-2 items-center">
         <p className="col-span-4 heading-4">{data.name}</p>
         <div className="col-span-1 w-[52px] h-[52px] bg-[#F9F9F9] border-[0.5px] border-[#EEE7E7] rounded-lg flex justify-center items-center cursor-pointer">
@@ -14,7 +14,7 @@ const DetailsCard = ({ data }: { data: WorkspaceCardData }) => {
         </div>
       </div>
       <img
-        className="w-full h-auto lg:h-[250px] rounded-lg my-4"
+        className="w-full h-auto lg:h-[250px] rounded-lg my-4 object-cover"
         src={data.image}
         alt="working-space"
       />
