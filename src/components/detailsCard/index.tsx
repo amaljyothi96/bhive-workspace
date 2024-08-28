@@ -14,7 +14,7 @@ const DetailsCard = ({ data }: { data: WorkspaceCardData }) => {
         </div>
       </div>
       <img
-        className="w-full h-[250px] rounded-lg my-4"
+        className="w-full h-auto lg:h-[250px] rounded-lg my-4"
         src={data.image}
         alt="working-space"
       />
