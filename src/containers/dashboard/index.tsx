@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getWorkspaceList } from "../../redux/actions/listActions";
 import { RootState, WorkspaceCardData } from "../../types";
 import DetailsCard from "../../components/detailsCard";
+import FeatureTile from "../../components/featureTile";
 
 const imageBaseUrl =
   "https://raw.githubusercontent.com/MujtabaKably/bhive-interview-project-data/main";
@@ -61,18 +62,19 @@ const Dashboard = () => {
       </section>
       <section className="my-24">
         <p className="heading-2 my-8">Why Choose us?</p>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
-          {features.map((item) => {
-            const Icon = item?.icon;
-            return (
-              <div className="col-span-1 flex items-center" key={item.id}>
-                <Icon
-                  sx={{ fontSize: "30px", marginRight: 1, color: "#FFBB00" }}
-                />
-                <div className="heading-5 font-medium">{item?.feature}</div>
-              </div>
-            );
-          })}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
+          {features.map((item, index) => (
+            <div
+              key={item.id}
+              className={`${
+                index === 3 || index === 7 ? "" : "lg:border-r"
+              } lg:border-gray-200 ${
+                index > 3 && "lg:border-t"
+              } rounded-lg lg:rounded-none bg-white lg:bg-transparent shadow-[0px_2px_4px_0px_#0000000F] lg:shadow-none`}
+            >
+              <FeatureTile data={item} />
+            </div>
+          ))}
         </div>
       </section>
       <section>
@@ -97,12 +99,16 @@ const Dashboard = () => {
               Boost your productivity with the BHIVE Workspace app. Elevate your
               workspace, collaborate efficiently, and unlock exclusive perks.
             </p>
-            <div className="lg:hidden block bottom-0 left-10">
+            <div className="lg:hidden flex justify-center block bottom-0 left-10">
               <img src={download} alt="download" />
             </div>
             <div className="flex justify-center gap-x-2 mt-8">
-              <img src={playStore} alt="playstore" />
-              <img src={appStore} alt="appstore" />
+              <img
+                className=" cursor-pointer"
+                src={playStore}
+                alt="playstore"
+              />
+              <img className=" cursor-pointer" src={appStore} alt="appstore" />
             </div>
           </div>
         </div>
