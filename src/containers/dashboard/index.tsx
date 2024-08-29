@@ -77,7 +77,7 @@ const Dashboard = () => {
       </section>
       <section>
         <p className="heading-2 my-8">Our Space Overview</p>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-8">
+        <div className="flex flex-col items-center lg:grid lg:grid-cols-3 gap-x-8 gap-y-8">
           {workspaceData?.map((item) => (
             <DetailsCard data={item} />
           ))}
